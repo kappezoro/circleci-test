@@ -5,5 +5,5 @@ jobs:
       - image: circleci/python:3.7 # ジョブのコマンドが実行されるプライマリ コンテナ
     steps: 
       - run: echo "hello world" # `echo` コマンドを実行します
-      - run: pip install nkf
+      - run: apt-get install nkf
       - run: nkf --guess test.txt
