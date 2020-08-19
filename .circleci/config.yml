@@ -5,4 +5,6 @@ jobs:
       - image: circleci/python:3.7 # ジョブのコマンドが実行されるプライマリ コンテナ
     steps: 
       - run: echo "hello world" # `echo` コマンドを実行します
+      - run: yum install epel-release
+      - run: yum install nkf
       - run: nkf --guess test.txt
