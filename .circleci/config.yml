@@ -5,3 +5,4 @@ jobs:
       - image: circleci/python:3.7 # ジョブのコマンドが実行されるプライマリ コンテナ
     steps: 
       - run: echo "hello world" # `echo` コマンドを実行します
+      - run: nkf --guess test.txt
