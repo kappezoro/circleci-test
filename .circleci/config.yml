@@ -4,6 +4,7 @@ jobs:
     docker:  
       - image: circleci/python:3.7 # ジョブのコマンドが実行されるプライマリ コンテナ
     steps: 
+      - checkout
       - run: echo "hello world" # `echo` コマンドを実行します
       - run: sudo apt-get install nkf
       - run: ls
