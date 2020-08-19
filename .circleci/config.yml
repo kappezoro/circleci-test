@@ -7,4 +7,4 @@ jobs:
       - checkout
       - run: echo "hello world" # `echo` コマンドを実行します
       - run: sudo apt-get install nkf
-      - run: find . -name "*.sql" | xargs nkf --guess | grep (LF) 
+      - run: find . -name "*.sql" | xargs nkf --guess | grep \(LF\) 
