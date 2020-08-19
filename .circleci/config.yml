@@ -1,0 +1,9 @@
+version: 2.1
+
+jobs:
+  test-nkf:
+    steps:
+      - run:
+          name: 'Test'
+          command: |
+            nkf --guess test.txt
