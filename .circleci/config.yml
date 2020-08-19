@@ -6,5 +6,4 @@ version: 2.1
       steps:
         - checkout # プロジェクト ディレクトリ内のコードをチェック アウトします
         - run: echo "hello world" # `echo` コマンドを実行します
-        - run: nkf --guess test.txt
 
