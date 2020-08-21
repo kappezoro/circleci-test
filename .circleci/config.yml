@@ -6,8 +6,9 @@ jobs:
     steps: 
       - checkout
       - run:
-        name: 'NewLine Type Check'
-        command: |
-          sudo apt-get install nkf #nkfモジュールをインストール
-          bash .circleci/newline_check.sh -e sql -i LF -d 各種モジュール/ETLModule/ELT_Framework/conf/ELT/ 
+          name: 'install module'
+          command: sudo apt-get install nkf #nkfモジュールをインストール
+      - run:
+          name: 'check new line'
+          command: bash .circleci/newline_check.sh -e sql -i LF -d 各種モジュール/ETLModule/ELT_Framework/conf/ELT/ 
 
