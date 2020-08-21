@@ -38,7 +38,9 @@ fi
 
 cnt=`find ${TARGET_DIRECTORY} -name "*.${EXTENTION_TYPE}" | xargs nkf --guess | grep \(${IRREGULAR_NEWLINE}\)  | wc -l`
 
-if [ $cnt > 0 ]; then
+echo $cnt
+
+if [ $cnt -gt 0 ]; then
     echo "${EXTENTION_TYPE}ファイルの中に改行コードが ${IRREGULAR_NEWLINE} のコードが含まれています。"
     find ${TARGET_DIRECTORY} -name "*.${EXTENTION_TYPE}" | xargs nkf --guess | grep \(${IRREGULAR_NEWLINE}\)
     exit 1
