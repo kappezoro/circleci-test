@@ -11,4 +11,14 @@ jobs:
       - run:
           name: 'check new line'
           command: bash .circleci/newline_check.sh -e txt -i LF
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 
