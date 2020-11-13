@@ -1,16 +1,30 @@
 version: 2.1
+
+orbs:
+  slack: circleci/slack@4.1.1
+
 jobs: 
   build: 
     docker:  
       - image: circleci/python:3.7 
     steps: 
-      - checkout
-      - run:
-          name: 'install module'
-          command: sudo apt-get install nkf #nkfモジュールをインストール
-      - run:
-          name: 'check new line'
-          command: bash .circleci/newline_check.sh -e txt -i LF
+      - slack/notify:
+          event: always
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
 workflows:
   version: 2
   build-deploy:
